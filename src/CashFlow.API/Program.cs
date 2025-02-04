@@ -1,4 +1,5 @@
 using CashFlow.API.Filters;
+using CashFlow.API.Middleware;
 
 namespace CashFlow.API
 {
@@ -21,6 +22,8 @@ namespace CashFlow.API
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseMiddleware<CultureMiddleware>();
 
             app.UseHttpsRedirection();
 
